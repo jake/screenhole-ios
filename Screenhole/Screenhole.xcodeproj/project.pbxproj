@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E2287A51F96855400DCCBBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2287A41F96855400DCCBBE /* AppDelegate.swift */; };
+		3E2287A71F96855400DCCBBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2287A61F96855400DCCBBE /* ViewController.swift */; };
+		3E2287AA1F96855400DCCBBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2287A81F96855400DCCBBE /* Main.storyboard */; };
+		3E2287AC1F96855400DCCBBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E2287AB1F96855400DCCBBE /* Assets.xcassets */; };
+		3E2287AF1F96855400DCCBBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2287AD1F96855400DCCBBE /* LaunchScreen.storyboard */; };
+		3E2287BA1F96855400DCCBBE /* ScreenholeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2287B91F96855400DCCBBE /* ScreenholeTests.swift */; };
+		3E2287C51F96855400DCCBBE /* ScreenholeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2287C41F96855400DCCBBE /* ScreenholeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3E2287B61F96855400DCCBBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E2287991F96855400DCCBBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E2287A01F96855400DCCBBE;
+			remoteInfo = Screenhole;
+		};
+		3E2287C11F96855400DCCBBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E2287991F96855400DCCBBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E2287A01F96855400DCCBBE;
+			remoteInfo = Screenhole;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3E2287A11F96855400DCCBBE /* Screenhole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Screenhole.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E2287A41F96855400DCCBBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3E2287A61F96855400DCCBBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3E2287A91F96855400DCCBBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3E2287AB1F96855400DCCBBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3E2287AE1F96855400DCCBBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3E2287B01F96855400DCCBBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E2287B51F96855400DCCBBE /* ScreenholeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenholeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E2287B91F96855400DCCBBE /* ScreenholeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenholeTests.swift; sourceTree = "<group>"; };
+		3E2287BB1F96855400DCCBBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E2287C01F96855400DCCBBE /* ScreenholeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenholeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E2287C41F96855400DCCBBE /* ScreenholeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenholeUITests.swift; sourceTree = "<group>"; };
+		3E2287C61F96855400DCCBBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3E22879E1F96855400DCCBBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E2287B21F96855400DCCBBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E2287BD1F96855400DCCBBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3E2287981F96855400DCCBBE = {
+			isa = PBXGroup;
+			children = (
+				3E2287A31F96855400DCCBBE /* Screenhole */,
+				3E2287B81F96855400DCCBBE /* ScreenholeTests */,
+				3E2287C31F96855400DCCBBE /* ScreenholeUITests */,
+				3E2287A21F96855400DCCBBE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3E2287A21F96855400DCCBBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E2287A11F96855400DCCBBE /* Screenhole.app */,
+				3E2287B51F96855400DCCBBE /* ScreenholeTests.xctest */,
+				3E2287C01F96855400DCCBBE /* ScreenholeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3E2287A31F96855400DCCBBE /* Screenhole */ = {
+			isa = PBXGroup;
+			children = (
+				3E2287A41F96855400DCCBBE /* AppDelegate.swift */,
+				3E2287A61F96855400DCCBBE /* ViewController.swift */,
+				3E2287A81F96855400DCCBBE /* Main.storyboard */,
+				3E2287AB1F96855400DCCBBE /* Assets.xcassets */,
+				3E2287AD1F96855400DCCBBE /* LaunchScreen.storyboard */,
+				3E2287B01F96855400DCCBBE /* Info.plist */,
+			);
+			path = Screenhole;
+			sourceTree = "<group>";
+		};
+		3E2287B81F96855400DCCBBE /* ScreenholeTests */ = {
+			isa = PBXGroup;
+			children = (
+				3E2287B91F96855400DCCBBE /* ScreenholeTests.swift */,
+				3E2287BB1F96855400DCCBBE /* Info.plist */,
+			);
+			path = ScreenholeTests;
+			sourceTree = "<group>";
+		};
+		3E2287C31F96855400DCCBBE /* ScreenholeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3E2287C41F96855400DCCBBE /* ScreenholeUITests.swift */,
+				3E2287C61F96855400DCCBBE /* Info.plist */,
+			);
+			path = ScreenholeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3E2287A01F96855400DCCBBE /* Screenhole */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E2287C91F96855400DCCBBE /* Build configuration list for PBXNativeTarget "Screenhole" */;
+			buildPhases = (
+				3E22879D1F96855400DCCBBE /* Sources */,
+				3E22879E1F96855400DCCBBE /* Frameworks */,
+				3E22879F1F96855400DCCBBE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Screenhole;
+			productName = Screenhole;
+			productReference = 3E2287A11F96855400DCCBBE /* Screenhole.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3E2287B41F96855400DCCBBE /* ScreenholeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E2287CC1F96855400DCCBBE /* Build configuration list for PBXNativeTarget "ScreenholeTests" */;
+			buildPhases = (
+				3E2287B11F96855400DCCBBE /* Sources */,
+				3E2287B21F96855400DCCBBE /* Frameworks */,
+				3E2287B31F96855400DCCBBE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E2287B71F96855400DCCBBE /* PBXTargetDependency */,
+			);
+			name = ScreenholeTests;
+			productName = ScreenholeTests;
+			productReference = 3E2287B51F96855400DCCBBE /* ScreenholeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3E2287BF1F96855400DCCBBE /* ScreenholeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E2287CF1F96855400DCCBBE /* Build configuration list for PBXNativeTarget "ScreenholeUITests" */;
+			buildPhases = (
+				3E2287BC1F96855400DCCBBE /* Sources */,
+				3E2287BD1F96855400DCCBBE /* Frameworks */,
+				3E2287BE1F96855400DCCBBE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E2287C21F96855400DCCBBE /* PBXTargetDependency */,
+			);
+			name = ScreenholeUITests;
+			productName = ScreenholeUITests;
+			productReference = 3E2287C01F96855400DCCBBE /* ScreenholeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3E2287991F96855400DCCBBE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Thinko;
+				TargetAttributes = {
+					3E2287A01F96855400DCCBBE = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					3E2287B41F96855400DCCBBE = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3E2287A01F96855400DCCBBE;
+					};
+					3E2287BF1F96855400DCCBBE = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3E2287A01F96855400DCCBBE;
+					};
+				};
+			};
+			buildConfigurationList = 3E22879C1F96855400DCCBBE /* Build configuration list for PBXProject "Screenhole" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3E2287981F96855400DCCBBE;
+			productRefGroup = 3E2287A21F96855400DCCBBE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3E2287A01F96855400DCCBBE /* Screenhole */,
+				3E2287B41F96855400DCCBBE /* ScreenholeTests */,
+				3E2287BF1F96855400DCCBBE /* ScreenholeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3E22879F1F96855400DCCBBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E2287AF1F96855400DCCBBE /* LaunchScreen.storyboard in Resources */,
+				3E2287AC1F96855400DCCBBE /* Assets.xcassets in Resources */,
+				3E2287AA1F96855400DCCBBE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E2287B31F96855400DCCBBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E2287BE1F96855400DCCBBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3E22879D1F96855400DCCBBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E2287A71F96855400DCCBBE /* ViewController.swift in Sources */,
+				3E2287A51F96855400DCCBBE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E2287B11F96855400DCCBBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E2287BA1F96855400DCCBBE /* ScreenholeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E2287BC1F96855400DCCBBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E2287C51F96855400DCCBBE /* ScreenholeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3E2287B71F96855400DCCBBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E2287A01F96855400DCCBBE /* Screenhole */;
+			targetProxy = 3E2287B61F96855400DCCBBE /* PBXContainerItemProxy */;
+		};
+		3E2287C21F96855400DCCBBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E2287A01F96855400DCCBBE /* Screenhole */;
+			targetProxy = 3E2287C11F96855400DCCBBE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3E2287A81F96855400DCCBBE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E2287A91F96855400DCCBBE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3E2287AD1F96855400DCCBBE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E2287AE1F96855400DCCBBE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3E2287C71F96855400DCCBBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3E2287C81F96855400DCCBBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3E2287CA1F96855400DCCBBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7BXRR563Q;
+				INFOPLIST_FILE = Screenhole/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thinko.screenhole;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3E2287CB1F96855400DCCBBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7BXRR563Q;
+				INFOPLIST_FILE = Screenhole/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thinko.screenhole;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3E2287CD1F96855400DCCBBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7BXRR563Q;
+				INFOPLIST_FILE = ScreenholeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thinko.screenholeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Screenhole.app/Screenhole";
+			};
+			name = Debug;
+		};
+		3E2287CE1F96855400DCCBBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7BXRR563Q;
+				INFOPLIST_FILE = ScreenholeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thinko.screenholeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Screenhole.app/Screenhole";
+			};
+			name = Release;
+		};
+		3E2287D01F96855400DCCBBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7BXRR563Q;
+				INFOPLIST_FILE = ScreenholeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thinko.screenholeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Screenhole;
+			};
+			name = Debug;
+		};
+		3E2287D11F96855400DCCBBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7BXRR563Q;
+				INFOPLIST_FILE = ScreenholeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thinko.screenholeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Screenhole;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3E22879C1F96855400DCCBBE /* Build configuration list for PBXProject "Screenhole" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E2287C71F96855400DCCBBE /* Debug */,
+				3E2287C81F96855400DCCBBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E2287C91F96855400DCCBBE /* Build configuration list for PBXNativeTarget "Screenhole" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E2287CA1F96855400DCCBBE /* Debug */,
+				3E2287CB1F96855400DCCBBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E2287CC1F96855400DCCBBE /* Build configuration list for PBXNativeTarget "ScreenholeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E2287CD1F96855400DCCBBE /* Debug */,
+				3E2287CE1F96855400DCCBBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E2287CF1F96855400DCCBBE /* Build configuration list for PBXNativeTarget "ScreenholeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E2287D01F96855400DCCBBE /* Debug */,
+				3E2287D11F96855400DCCBBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3E2287991F96855400DCCBBE /* Project object */;
+}
