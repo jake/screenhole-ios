@@ -23,6 +23,9 @@ class ViewController: UIViewController {
 		view.backgroundColor = .black
 		
 		uploadButton.setImage(#imageLiteral(resourceName: "button"), for: .normal)
+		
+		uploadButton.addTarget(self, action: #selector(sendScreenshot), for: .touchUpInside)
+		
 		imageView.layer.cornerRadius = 5
 		imageView.layer.masksToBounds = true
 		
@@ -79,14 +82,23 @@ class ViewController: UIViewController {
 		present(alertController, animated: true, completion: nil)
 	}
 	
-	@IBAction func sendScreenshot() {
+	@objc func sendScreenshot() {
 		guard let _ = Screenshots.shared.latestImage else {
 			print("no image to share")
 			return
 		}
+		uploadButton.isEnabled = false
 		Screenhole.shared.upload(Screenshots.shared.latestImageURL) { succeeded in
+			self.uploadButton.isEnabled = true
 			if succeeded {
-				print("Image uploaded!")
+				UIView.animate(withDuration: 0.35, delay: 0, options: [.curveEaseIn], animations: {
+					self.imageView.transform = CGAffineTransform(scaleX: 0, y: 0)
+					self.imageView.alpha = 0
+				}, completion: { succeeded in
+					self.imageView.image = nil
+					self.imageView.transform = .identity
+					self.imageView.alpha = 1
+				})
 			} else {
 				print("Upload failed!")
 			}
