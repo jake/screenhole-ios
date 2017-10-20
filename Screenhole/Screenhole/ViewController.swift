@@ -14,6 +14,8 @@ class ViewController: UIViewController {
 	let imageView = UIImageView(image: nil)
 	let uploadButton = UIButton(type: .custom)
 	
+	let mrHole = UIImageView(image: #imageLiteral(resourceName: "mr-hole"))
+	
 	private let verticalSpacing: CGFloat = 32
 	private let horizontalSpacing: CGFloat = 10
 	
@@ -23,12 +25,12 @@ class ViewController: UIViewController {
 		view.backgroundColor = .black
 		
 		uploadButton.setImage(#imageLiteral(resourceName: "button"), for: .normal)
-		
 		uploadButton.addTarget(self, action: #selector(sendScreenshot), for: .touchUpInside)
 		
 		imageView.layer.cornerRadius = 5
 		imageView.layer.masksToBounds = true
 		
+		self.view.addSubview(mrHole)
 		self.view.addSubview(imageView)
 		self.view.addSubview(uploadButton)
 	}
@@ -121,6 +123,8 @@ extension ViewController {
 		
 		let areaInsets = UIEdgeInsetsMake(max(safeAreaInsets.top, customSafeAreaInsets.top), max(safeAreaInsets.left, customSafeAreaInsets.left), max(safeAreaInsets.bottom, customSafeAreaInsets.bottom), max(safeAreaInsets.right, customSafeAreaInsets.right))
 		let safeArea = UIEdgeInsetsInsetRect(view.bounds, areaInsets)
+		
+		mrHole.frame = CGRect(origin: CGPoint(x: safeArea.midX - (mrHole.bounds.width / 2), y: safeArea.midY - (mrHole.bounds.height / 2)) , size: mrHole.bounds.size)
 		
 		if let buttonImage = uploadButton.image(for: .normal) {
 			let buttonSize = CGSize(width: min(safeArea.width, buttonImage.size.width), height: buttonImage.size.height)
