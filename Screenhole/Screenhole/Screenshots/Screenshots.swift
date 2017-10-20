@@ -40,7 +40,7 @@ class Screenshots: NSObject {
 	
 	var latestImageHandler: ((_ result: UIImage?) -> Void)?
 	
-	func requestLatest(completionHandler: @escaping (_ result: UIImage?) -> Void) {
+	func requestLatest(after date: Date?, completionHandler: @escaping (_ result: UIImage?) -> Void) {
 		PHPhotoLibrary.requestAuthorization { (status) in
 			guard status == .authorized else {
 				DispatchQueue.main.async {
@@ -49,14 +49,14 @@ class Screenshots: NSObject {
 				return
 			}
 			self.latestImageHandler = completionHandler
-			self.getLatest(with: completionHandler)
+			self.getLatest(after: date, with: completionHandler)
 		}
 	}
 	
 	var latestImage: UIImage?
 	var latestImageURL: URL = FileManager.default.temporaryDirectory.appendingPathComponent("screenshot").appendingPathExtension("png")
 	
-	private func getLatest(with completionHandler: @escaping (_ result: UIImage?) -> Void) {
+	private func getLatest(after date: Date?, with completionHandler: @escaping (_ result: UIImage?) -> Void) {
 		
 		if screenshots == nil {
 			guard let collection = screenshotsCollections.firstObject else {
@@ -66,6 +66,9 @@ class Screenshots: NSObject {
 			
 			let fetchOptions = PHFetchOptions()
 			fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+			if let date = date {
+				fetchOptions.predicate = NSPredicate(format: "creationDate > %@", date as NSDate)
+			}
 			screenshots = PHAsset.fetchAssets(in: collection, options: fetchOptions)
 			PHPhotoLibrary.shared().register(self)
 		}
@@ -109,7 +112,7 @@ extension Screenshots: PHPhotoLibraryChangeObserver {
 			if changes.hasIncrementalChanges {
 				DispatchQueue.main.async {
 					if let handler = self.latestImageHandler {
-						self.getLatest(with: handler)
+						self.getLatest(after: nil, with: handler)
 					}
 				}
 			}

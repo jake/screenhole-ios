@@ -33,7 +33,7 @@ class ViewController: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
-		Screenshots.shared.requestLatest { [weak self] (image) in
+		Screenshots.shared.requestLatest(after: nil) { [weak self] (image) in
 			guard let image = image else { return }
 			self?.imageView.image = image
 			self?.view.setNeedsLayout()
