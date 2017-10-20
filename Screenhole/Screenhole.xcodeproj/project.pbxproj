@@ -106,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				3EA66BDF1F97DAD700F03D79 /* Screenshots */,
+				3E926E5E1F9A5DBA00E4371A /* UI */,
 				3E2287A41F96855400DCCBBE /* AppDelegate.swift */,
 				3E2287A61F96855400DCCBBE /* ViewController.swift */,
 				3E2287A81F96855400DCCBBE /* Main.storyboard */,
@@ -133,6 +134,13 @@
 			);
 			path = ScreenholeUITests;
 			sourceTree = "<group>";
+		};
+		3E926E5E1F9A5DBA00E4371A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = SOURCE_ROOT;
 		};
 		3EA66BDF1F97DAD700F03D79 /* Screenshots */ = {
 			isa = PBXGroup;
@@ -482,11 +490,12 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Screenhole/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thinko.screenhole;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -501,11 +510,12 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Screenhole/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thinko.screenhole;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
