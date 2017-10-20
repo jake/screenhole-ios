@@ -74,30 +74,35 @@ class Screenshots: NSObject {
 		}
 		
 		guard let asset = screenshots?.firstObject, let creationDate = asset.creationDate else {
-			completionHandler(nil)
+			DispatchQueue.main.async {
+				completionHandler(nil)
+			}
 			return
 		}
 		
 		guard creationDate.timeIntervalSinceNow > -maximumScreenshotAge else {
-			completionHandler(nil)
+			DispatchQueue.main.async {
+				completionHandler(nil)
+			}
 			return
 		}
 		
 		lastScreenshotTime = creationDate
 		
 		asset.getURL { [weak self] imageURL in
-			guard let url = imageURL, let imageData = try? Data(contentsOf: url) else {
-				completionHandler(nil)
+			guard let url = imageURL, let imageData = try? Data(contentsOf: url), let image = UIImage(data: imageData) else {
+				DispatchQueue.main.async {
+					completionHandler(nil)
+				}
 				return
 			}
-			if let image = UIImage(data: imageData) {
-				if let strongSelf = self {
-					try? imageData.write(to: strongSelf.latestImageURL)
-				}
-				completionHandler(image)
-				self?.latestImage = image
+			if let strongSelf = self {
+				try? imageData.write(to: strongSelf.latestImageURL)
 			}
-			completionHandler(nil)
+			DispatchQueue.main.async {
+				completionHandler(image)
+			}
+			self?.latestImage = image
 		}
 	}
 }
