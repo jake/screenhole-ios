@@ -54,6 +54,7 @@ class Screenshots: NSObject {
 	}
 	
 	var latestImage: UIImage?
+	var latestCreationDate: Date?
 	var latestImageURL: URL = FileManager.default.temporaryDirectory.appendingPathComponent("screenshot").appendingPathExtension("png")
 	
 	private func getLatest(after date: Date?, with completionHandler: @escaping (_ result: UIImage?) -> Void) {
@@ -103,6 +104,7 @@ class Screenshots: NSObject {
 				completionHandler(image)
 			}
 			self?.latestImage = image
+			self?.latestCreationDate = asset.creationDate
 		}
 	}
 }

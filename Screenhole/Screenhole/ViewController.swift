@@ -26,6 +26,7 @@ class ViewController: UIViewController {
 		
 		uploadButton.setImage(#imageLiteral(resourceName: "button"), for: .normal)
 		uploadButton.addTarget(self, action: #selector(sendScreenshot), for: .touchUpInside)
+		uploadButton.isEnabled = false
 		
 		imageView.layer.cornerRadius = 5
 		imageView.layer.masksToBounds = true
@@ -38,8 +39,8 @@ class ViewController: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
-		Screenshots.shared.requestLatest(after: nil) { [weak self] (image) in
-			guard let image = image else { return }
+		Screenshots.shared.requestLatest(after: Screenhole.shared.latestCreationDate) { [weak self] (image) in
+			self?.uploadButton.isEnabled = image != nil
 			self?.imageView.image = image
 			self?.view.setNeedsLayout()
 		}
@@ -75,7 +76,7 @@ class ViewController: UIViewController {
 				if !succeeded {
 					weakSelf?.showLoginDialog()
 				} else {
-					weakSelf?.uploadButton.isEnabled = true
+					weakSelf?.uploadButton.isEnabled = weakSelf?.imageView.image != nil
 				}
 			}
 		})
@@ -85,12 +86,12 @@ class ViewController: UIViewController {
 	}
 	
 	@objc func sendScreenshot() {
-		guard let _ = Screenshots.shared.latestImage else {
+		guard let _ = Screenshots.shared.latestImage, let date = Screenshots.shared.latestCreationDate else {
 			print("no image to share")
 			return
 		}
 		uploadButton.isEnabled = false
-		Screenhole.shared.upload(Screenshots.shared.latestImageURL) { succeeded in
+		Screenhole.shared.upload(Screenshots.shared.latestImageURL, creationDate: date) { succeeded in
 			if succeeded {
 				UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseIn], animations: {
 					self.imageView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
@@ -99,9 +100,9 @@ class ViewController: UIViewController {
 					self.imageView.image = nil
 					self.imageView.transform = .identity
 					self.imageView.alpha = 1
-					self.uploadButton.isEnabled = true
 				})
 			} else {
+				self.uploadButton.isEnabled = true
 				print("Upload failed!")
 			}
 		}

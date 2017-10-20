@@ -16,6 +16,20 @@ class Screenhole {
 	var isUserSignedIn: Bool {
 		return authenticationToken != nil
 	}
+	
+	var latestCreationDate: Date? {
+		set {
+			guard newValue != latestCreationDate else {
+				return
+			}
+			UserDefaults.standard.set(newValue, forKey: "latestCreationDate")
+			UserDefaults.standard.synchronize()
+		}
+		get {
+			return UserDefaults.standard.object(forKey: "latestCreationDate") as? Date
+		}
+	}
+	
 	private var authenticationToken: String? {
 		set {
 			guard newValue != authenticationToken else {
@@ -25,8 +39,7 @@ class Screenhole {
 			UserDefaults.standard.synchronize()
 		}
 		get {
-			let token = UserDefaults.standard.string(forKey: "authenticationToken")
-			return token
+			return UserDefaults.standard.string(forKey: "authenticationToken")
 		}
 	}
 	
@@ -48,7 +61,7 @@ class Screenhole {
 		}
 	}
 	
-	func upload(_ imageURL: URL, completionHandler: @escaping (_ succeeded: Bool) -> Void) {
+	func upload(_ imageURL: URL, creationDate: Date, completionHandler: @escaping (_ succeeded: Bool) -> Void) {
 		guard let token = authenticationToken else {
 			print("No token available")
 			completionHandler(false)
@@ -65,7 +78,7 @@ class Screenhole {
 			case .success(let upload, _, _):
 				upload.validate(statusCode: 200...299).responseJSON { response in
 					response.result.ifSuccess {
-						
+						self.latestCreationDate = creationDate
 						completionHandler(true)
 					}.ifFailure {
 						print("Response: \(response)")
