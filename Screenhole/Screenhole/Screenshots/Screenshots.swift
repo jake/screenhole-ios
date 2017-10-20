@@ -28,14 +28,6 @@ class Screenshots: NSObject {
 	
 	override init() {
 		super.init()
-		guard let collection = screenshotsCollections.firstObject else {
-			return
-		}
-		
-		let fetchOptions = PHFetchOptions()
-		fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-		screenshots = PHAsset.fetchAssets(in: collection, options: fetchOptions)
-		PHPhotoLibrary.shared().register(self)
 	}
 	
 	lazy var screenshotsCollections: PHFetchResult<PHAssetCollection> = {
@@ -49,14 +41,34 @@ class Screenshots: NSObject {
 	var latestImageHandler: ((_ result: UIImage?) -> Void)?
 	
 	func requestLatest(completionHandler: @escaping (_ result: UIImage?) -> Void) {
-		latestImageHandler = completionHandler
-		getLatest(with: completionHandler)
+		PHPhotoLibrary.requestAuthorization { (status) in
+			guard status == .authorized else {
+				DispatchQueue.main.async {
+					completionHandler(nil)
+				}
+				return
+			}
+			self.latestImageHandler = completionHandler
+			self.getLatest(with: completionHandler)
+		}
 	}
 	
 	var latestImage: UIImage?
 	var latestImageURL: URL = FileManager.default.temporaryDirectory.appendingPathComponent("screenshot").appendingPathExtension("png")
 	
 	private func getLatest(with completionHandler: @escaping (_ result: UIImage?) -> Void) {
+		
+		if screenshots == nil {
+			guard let collection = screenshotsCollections.firstObject else {
+				completionHandler(nil)
+				return
+			}
+			
+			let fetchOptions = PHFetchOptions()
+			fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+			screenshots = PHAsset.fetchAssets(in: collection, options: fetchOptions)
+			PHPhotoLibrary.shared().register(self)
+		}
 		
 		guard let asset = screenshots?.firstObject, let creationDate = asset.creationDate else {
 			completionHandler(nil)
