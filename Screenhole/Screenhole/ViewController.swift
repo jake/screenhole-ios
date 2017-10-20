@@ -89,15 +89,15 @@ class ViewController: UIViewController {
 		}
 		uploadButton.isEnabled = false
 		Screenhole.shared.upload(Screenshots.shared.latestImageURL) { succeeded in
-			self.uploadButton.isEnabled = true
 			if succeeded {
-				UIView.animate(withDuration: 0.35, delay: 0, options: [.curveEaseIn], animations: {
-					self.imageView.transform = CGAffineTransform(scaleX: 0, y: 0)
-					self.imageView.alpha = 0
+				UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseIn], animations: {
+					self.imageView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+					self.imageView.alpha = -1
 				}, completion: { succeeded in
 					self.imageView.image = nil
 					self.imageView.transform = .identity
 					self.imageView.alpha = 1
+					self.uploadButton.isEnabled = true
 				})
 			} else {
 				print("Upload failed!")
