@@ -14,6 +14,9 @@
 		3E2287AF1F96855400DCCBBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2287AD1F96855400DCCBBE /* LaunchScreen.storyboard */; };
 		3E2287BA1F96855400DCCBBE /* ScreenholeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2287B91F96855400DCCBBE /* ScreenholeTests.swift */; };
 		3E2287C51F96855400DCCBBE /* ScreenholeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2287C41F96855400DCCBBE /* ScreenholeUITests.swift */; };
+		3EA66BE11F97DAD700F03D79 /* Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA66BE01F97DAD700F03D79 /* Screenshots.swift */; };
+		3EA66BE31F97EDCF00F03D79 /* Screenhole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA66BE21F97EDCF00F03D79 /* Screenhole.swift */; };
+		3EA66BE61F97F2FD00F03D79 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA66BE51F97F2FD00F03D79 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		3E2287C01F96855400DCCBBE /* ScreenholeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenholeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2287C41F96855400DCCBBE /* ScreenholeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenholeUITests.swift; sourceTree = "<group>"; };
 		3E2287C61F96855400DCCBBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EA66BE01F97DAD700F03D79 /* Screenshots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screenshots.swift; sourceTree = "<group>"; };
+		3EA66BE21F97EDCF00F03D79 /* Screenhole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenhole.swift; sourceTree = "<group>"; };
+		3EA66BE51F97F2FD00F03D79 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EA66BE61F97F2FD00F03D79 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +88,7 @@
 				3E2287B81F96855400DCCBBE /* ScreenholeTests */,
 				3E2287C31F96855400DCCBBE /* ScreenholeUITests */,
 				3E2287A21F96855400DCCBBE /* Products */,
+				3EA66BE41F97F2FC00F03D79 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +105,7 @@
 		3E2287A31F96855400DCCBBE /* Screenhole */ = {
 			isa = PBXGroup;
 			children = (
+				3EA66BDF1F97DAD700F03D79 /* Screenshots */,
 				3E2287A41F96855400DCCBBE /* AppDelegate.swift */,
 				3E2287A61F96855400DCCBBE /* ViewController.swift */,
 				3E2287A81F96855400DCCBBE /* Main.storyboard */,
@@ -125,6 +134,23 @@
 			path = ScreenholeUITests;
 			sourceTree = "<group>";
 		};
+		3EA66BDF1F97DAD700F03D79 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				3EA66BE01F97DAD700F03D79 /* Screenshots.swift */,
+				3EA66BE21F97EDCF00F03D79 /* Screenhole.swift */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
+		3EA66BE41F97F2FC00F03D79 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EA66BE51F97F2FD00F03D79 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +161,7 @@
 				3E22879D1F96855400DCCBBE /* Sources */,
 				3E22879E1F96855400DCCBBE /* Frameworks */,
 				3E22879F1F96855400DCCBBE /* Resources */,
+				3EA66BE71F97F31000F03D79 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -254,13 +281,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3EA66BE71F97F31000F03D79 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3E22879D1F96855400DCCBBE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3E2287A71F96855400DCCBBE /* ViewController.swift in Sources */,
+				3EA66BE11F97DAD700F03D79 /* Screenshots.swift in Sources */,
 				3E2287A51F96855400DCCBBE /* AppDelegate.swift in Sources */,
+				3EA66BE31F97EDCF00F03D79 /* Screenhole.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +416,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -418,6 +466,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -428,6 +477,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7BXRR563Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Screenhole/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thinko.screenhole;
@@ -443,6 +496,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H7BXRR563Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Screenhole/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thinko.screenhole;
