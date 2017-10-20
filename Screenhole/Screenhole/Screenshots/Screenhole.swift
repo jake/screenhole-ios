@@ -48,21 +48,15 @@ class Screenhole {
 		}
 	}
 	
-	func upload(_ image: UIImage, completionHandler: @escaping (_ succeeded: Bool) -> Void) {
+	func upload(_ imageURL: URL, completionHandler: @escaping (_ succeeded: Bool) -> Void) {
 		guard let token = authenticationToken else {
 			print("No token available")
 			completionHandler(false)
 			return
 		}
 		
-		guard let data = UIImagePNGRepresentation(image) else {
-			print("No image data available")
-			completionHandler(false)
-			return
-		}
-		
 		Alamofire.upload(multipartFormData: { formdata in
-			formdata.append(data, withName: "image")
+			formdata.append(imageURL, withName: "image")
 		}, to: "https://api.screenhole.net/shots",
 		   headers: [
 			"Authorization": "Bearer \(token)",
@@ -74,7 +68,7 @@ class Screenhole {
 						
 						completionHandler(true)
 					}.ifFailure {
-						
+						print("Response: \(response)")
 						completionHandler(false)
 					}
 				}

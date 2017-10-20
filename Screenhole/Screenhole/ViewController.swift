@@ -59,11 +59,11 @@ class ViewController: UIViewController {
 	}
 	
 	@IBAction func sendScreenshot() {
-		guard let image = Screenshots.shared.latestImage else {
+		guard let _ = Screenshots.shared.latestImage else {
 			print("no image to share")
 			return
 		}
-		Screenhole.shared.upload(image) { succeeded in
+		Screenhole.shared.upload(Screenshots.shared.latestImageURL) { succeeded in
 			if succeeded {
 				print("Image uploaded!")
 			} else {

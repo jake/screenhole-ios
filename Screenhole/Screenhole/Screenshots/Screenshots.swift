@@ -54,6 +54,7 @@ class Screenshots: NSObject {
 	}
 	
 	var latestImage: UIImage?
+	var latestImageURL: URL = FileManager.default.temporaryDirectory.appendingPathComponent("screenshot").appendingPathExtension("png")
 	
 	private func getLatest(with completionHandler: @escaping (_ result: UIImage?) -> Void) {
 		
@@ -75,6 +76,9 @@ class Screenshots: NSObject {
 				return
 			}
 			if let image = UIImage(data: imageData) {
+				if let strongSelf = self {
+					try? imageData.write(to: strongSelf.latestImageURL)
+				}
 				completionHandler(image)
 				self?.latestImage = image
 			}
