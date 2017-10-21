@@ -19,22 +19,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mr-hole" translatesAutoresizingMaskIntoConstraints="NO" id="it7-Pl-ldY">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="20" y="60" width="394" height="676"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="it7-Pl-ldY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Be7-dX-NYS"/>
                             <constraint firstItem="it7-Pl-ldY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Ezg-EB-0hJ"/>
-                            <constraint firstItem="it7-Pl-ldY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FK3-aW-uig"/>
-                            <constraint firstItem="it7-Pl-ldY" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="dv8-L5-w6D"/>
+                            <constraint firstItem="it7-Pl-ldY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="boQ-J8-3Sw"/>
+                            <constraint firstItem="it7-Pl-ldY" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="60" id="dv8-L5-w6D"/>
+                            <constraint firstItem="it7-Pl-ldY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hFb-8q-agU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="50.724637681159422" y="374.18478260869568"/>
         </scene>
     </scenes>
     <resources>
