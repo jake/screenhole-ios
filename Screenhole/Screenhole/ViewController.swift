@@ -15,9 +15,12 @@ class ViewController: UIViewController {
 	let uploadButton = UIButton(type: .custom)
 	
 	let mrHole = UIImageView(image: #imageLiteral(resourceName: "mr-hole"))
+	let textBubble = TextBubble()
 	
 	private let verticalSpacing: CGFloat = 32
 	private let horizontalSpacing: CGFloat = 10
+	private let mrHoleOffset = CGPoint(x: 10, y: 30)
+	private let textBubbleSpacing: CGFloat = 10
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -31,15 +34,26 @@ class ViewController: UIViewController {
 		imageView.layer.cornerRadius = 5
 		imageView.layer.masksToBounds = true
 		
+		textBubble.isHidden = true
+		
 		self.view.addSubview(mrHole)
 		self.view.addSubview(imageView)
 		self.view.addSubview(uploadButton)
+		self.view.addSubview(textBubble)
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
 		Screenshots.shared.requestLatest(after: Screenhole.shared.latestCreationDate) { [weak self] (image) in
+			if image != nil {
+				self?.textBubble.isHidden = true
+				self?.mrHole.isHidden = true
+			} else {
+				self?.textBubble.isHidden = false
+				self?.mrHole.isHidden = false
+				self?.textBubble.textLabel.text = "Come back after you take a screenshot..."
+			}
 			self?.uploadButton.isEnabled = image != nil
 			self?.imageView.image = image
 			self?.view.setNeedsLayout()
@@ -56,6 +70,10 @@ class ViewController: UIViewController {
 	}
 	
 	func showLoginDialog() {
+		
+		textBubble.textLabel.text = "You need to login to access the hole"
+		view.setNeedsLayout()
+		
 		let alertController = UIAlertController(title: "Sign in to the hole", message: "Credentials please", preferredStyle: .alert)
 		alertController.addTextField { textField in
 			textField.placeholder = "username"
@@ -76,7 +94,15 @@ class ViewController: UIViewController {
 				if !succeeded {
 					weakSelf?.showLoginDialog()
 				} else {
-					weakSelf?.uploadButton.isEnabled = weakSelf?.imageView.image != nil
+					if weakSelf?.imageView.image != nil {
+						weakSelf?.uploadButton.isEnabled = true
+						weakSelf?.textBubble.isHidden = true
+					} else {
+						weakSelf?.uploadButton.isEnabled = false
+						weakSelf?.textBubble.textLabel.text = "Come back after you take a screenshot..."
+						weakSelf?.textBubble.isHidden = false
+						weakSelf?.view.setNeedsLayout()
+					}
 				}
 			}
 		})
@@ -91,8 +117,12 @@ class ViewController: UIViewController {
 			return
 		}
 		uploadButton.isEnabled = false
+		self.textBubble.textLabel.text = "Nice shot!"
+		self.view.setNeedsLayout()
 		Screenhole.shared.upload(Screenshots.shared.latestImageURL, creationDate: date) { succeeded in
 			if succeeded {
+				self.textBubble.isHidden = false
+				self.mrHole.isHidden = false
 				UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseIn], animations: {
 					self.imageView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
 					self.imageView.alpha = -1
@@ -125,7 +155,10 @@ extension ViewController {
 		let areaInsets = UIEdgeInsetsMake(max(safeAreaInsets.top, customSafeAreaInsets.top), max(safeAreaInsets.left, customSafeAreaInsets.left), max(safeAreaInsets.bottom, customSafeAreaInsets.bottom), max(safeAreaInsets.right, customSafeAreaInsets.right))
 		let safeArea = UIEdgeInsetsInsetRect(view.bounds, areaInsets)
 		
-		mrHole.frame = CGRect(origin: CGPoint(x: safeArea.midX - (mrHole.bounds.width / 2), y: safeArea.midY - (mrHole.bounds.height / 2)) , size: mrHole.bounds.size)
+		mrHole.frame = CGRect(origin: CGPoint(x: safeArea.midX - (mrHole.bounds.width / 2) + mrHoleOffset.x, y: safeArea.midY - (mrHole.bounds.height / 2) + mrHoleOffset.y), size: mrHole.bounds.size)
+		
+		let bubbleSize = textBubble.sizeThatFits(safeArea.size)
+		textBubble.frame = CGRect(origin: CGPoint(x: safeArea.midX - (bubbleSize.width / 2), y: mrHole.frame.minY - bubbleSize.height - textBubbleSpacing), size: bubbleSize)
 		
 		if let buttonImage = uploadButton.image(for: .normal) {
 			let buttonSize = CGSize(width: min(safeArea.width, buttonImage.size.width), height: buttonImage.size.height)
