@@ -1,0 +1,6 @@
+git_url "git@github.com:jake/ios-code-signing.git"
+
+type "appstore" # The default type, can be: appstore, adhoc or development
+
+app_identifier "com.thinko.screenhole"
+username "ios-dev@thinko.co"
