@@ -45,7 +45,7 @@ class Screenhole {
 	
 	func login(with username: String, password: String, completionHandler: @escaping (_ succeeded: Bool) -> Void) {
 		let parameters = ["auth": ["username": username, "password": password]]
-		Alamofire.request("https://api.screenhole.net/user_token", method: .post, parameters: parameters, encoding: JSONEncoding(), headers: nil).responseJSON { response in
+		Alamofire.request("https://api.screenhole.net/users/token", method: .post, parameters: parameters, encoding: JSONEncoding(), headers: nil).responseJSON { response in
 			response.result.ifSuccess {
 				if let responseDictionary = response.value as? [String:String] {
 					self.authenticationToken = responseDictionary["jwt"]
