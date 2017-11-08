@@ -90,8 +90,8 @@ class Screenshots: NSObject {
 		
 		lastScreenshotTime = creationDate
 		
-		asset.getURL { [weak self] imageURL in
-			guard let url = imageURL, let imageData = try? Data(contentsOf: url), let image = UIImage(data: imageData) else {
+		asset.getImage { [weak self] (image, data) in
+			guard let image = image, let imageData = data else {
 				DispatchQueue.main.async {
 					completionHandler(nil)
 				}
@@ -131,26 +131,23 @@ extension Screenshots: PHPhotoLibraryChangeObserver {
 
 
 extension PHAsset {
-	func getURL(completionHandler : @escaping ((_ responseURL : URL?) -> Void)) {
-		if mediaType == .image {
-			let options: PHContentEditingInputRequestOptions = PHContentEditingInputRequestOptions()
-			options.canHandleAdjustmentData = {(adjustmeta: PHAdjustmentData) -> Bool in
-				return true
+	func getImage(completionHandler : @escaping ((_ image : UIImage?, _ data: Data?) -> Void)) {
+		guard mediaType == .image else {
+			completionHandler(nil, nil)
+			return
+		}
+		
+		let options = PHImageRequestOptions()
+		options.version = .current
+		PHImageManager.default().requestImageData(for: self, options: options) { (data, content, orientation, info) in
+			guard info?[PHImageResultIsDegradedKey] as? Bool == nil || info?[PHImageResultIsDegradedKey] as? Bool == false else {
+				return
 			}
-			requestContentEditingInput(with: options, completionHandler: { (contentEditingInput, info) in
-				completionHandler(contentEditingInput!.fullSizeImageURL)
-			})
-		} else if mediaType == .video {
-			let options: PHVideoRequestOptions = PHVideoRequestOptions()
-			options.version = .current
-			PHImageManager.default().requestAVAsset(forVideo: self, options: options, resultHandler: { (asset, audioMix, info) in
-				if let urlAsset = asset as? AVURLAsset {
-					let localVideoUrl = urlAsset.url
-					completionHandler(localVideoUrl)
-				} else {
-					completionHandler(nil)
-				}
-			})
+			var image: UIImage?
+			if let imageData = data {
+				image = UIImage(data: imageData)
+			}
+			completionHandler(image, data)
 		}
 	}
 }
