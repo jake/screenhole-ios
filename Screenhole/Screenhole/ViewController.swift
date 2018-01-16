@@ -40,6 +40,12 @@ class ViewController: UIViewController {
 		self.view.addSubview(imageView)
 		self.view.addSubview(uploadButton)
 		self.view.addSubview(textBubble)
+		
+		NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationDidBecomeActive, object: nil, queue: nil) { notification in
+			Screenhole.shared.refreshUser({ succeeded in
+				print("checkuser: \(succeeded)")
+			})
+		}
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
