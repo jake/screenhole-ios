@@ -1,0 +1,136 @@
+{
+  "properties" : {
+    "duration" : 30,
+    "duration-type" : "fps",
+    "repetitions" : 0
+  },
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "frames" : [
+    {
+      "filename" : "irene-300_00010.png"
+    },
+    {
+      "filename" : "irene-300_00011.png"
+    },
+    {
+      "filename" : "irene-300_00012.png"
+    },
+    {
+      "filename" : "irene-300_00013.png"
+    },
+    {
+      "filename" : "irene-300_00014.png"
+    },
+    {
+      "filename" : "irene-300_00015.png"
+    },
+    {
+      "filename" : "irene-300_00016.png"
+    },
+    {
+      "filename" : "irene-300_00017.png"
+    },
+    {
+      "filename" : "irene-300_00018.png"
+    },
+    {
+      "filename" : "irene-300_00019.png"
+    },
+    {
+      "filename" : "irene-300_00020.png"
+    },
+    {
+      "filename" : "irene-300_00021.png"
+    },
+    {
+      "filename" : "irene-300_00022.png"
+    },
+    {
+      "filename" : "irene-300_00023.png"
+    },
+    {
+      "filename" : "irene-300_00024.png"
+    },
+    {
+      "filename" : "irene-300_00025.png"
+    },
+    {
+      "filename" : "irene-300_00026.png"
+    },
+    {
+      "filename" : "irene-300_00027.png"
+    },
+    {
+      "filename" : "irene-300_00028.png"
+    },
+    {
+      "filename" : "irene-300_00029.png"
+    },
+    {
+      "filename" : "irene-300_00030.png"
+    },
+    {
+      "filename" : "irene-300_00031.png"
+    },
+    {
+      "filename" : "irene-300_00032.png"
+    },
+    {
+      "filename" : "irene-300_00033.png"
+    },
+    {
+      "filename" : "irene-300_00034.png"
+    },
+    {
+      "filename" : "irene-300_00035.png"
+    },
+    {
+      "filename" : "irene-300_00036.png"
+    },
+    {
+      "filename" : "irene-300_00037.png"
+    },
+    {
+      "filename" : "irene-300_00038.png"
+    },
+    {
+      "filename" : "irene-300_00039.png"
+    },
+    {
+      "filename" : "irene-300_00040.png"
+    },
+    {
+      "filename" : "irene-300_00041.png"
+    },
+    {
+      "filename" : "irene-300_00042.png"
+    },
+    {
+      "filename" : "irene-300_00043.png"
+    },
+    {
+      "filename" : "irene-300_00044.png"
+    },
+    {
+      "filename" : "irene-300_00045.png"
+    },
+    {
+      "filename" : "irene-300_00046.png"
+    },
+    {
+      "filename" : "irene-300_00047.png"
+    },
+    {
+      "filename" : "irene-300_00048.png"
+    },
+    {
+      "filename" : "irene-300_00049.png"
+    },
+    {
+      "filename" : "irene-300_00050.png"
+    }
+  ]
+}
