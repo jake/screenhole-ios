@@ -1,0 +1,55 @@
+{
+  "properties" : {
+    "duration" : 30,
+    "duration-type" : "fps",
+    "repetitions" : 0
+  },
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "frames" : [
+    {
+      "filename" : "chuckle-300_00000.png"
+    },
+    {
+      "filename" : "chuckle-300_00001.png"
+    },
+    {
+      "filename" : "chuckle-300_00002.png"
+    },
+    {
+      "filename" : "chuckle-300_00003.png"
+    },
+    {
+      "filename" : "chuckle-300_00004.png"
+    },
+    {
+      "filename" : "chuckle-300_00005.png"
+    },
+    {
+      "filename" : "chuckle-300_00006.png"
+    },
+    {
+      "filename" : "chuckle-300_00007.png"
+    },
+    {
+      "filename" : "chuckle-300_00008.png"
+    },
+    {
+      "filename" : "chuckle-300_00009.png"
+    },
+    {
+      "filename" : "chuckle-300_00010.png"
+    },
+    {
+      "filename" : "chuckle-300_00011.png"
+    },
+    {
+      "filename" : "chuckle-300_00012.png"
+    },
+    {
+      "filename" : "chuckle-300_00013.png"
+    }
+  ]
+}
