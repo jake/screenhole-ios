@@ -1,16 +1,19 @@
 {
   "stickers" : [
     {
-      "filename" : "Irene.stickersequence"
+      "filename" : "Connie.sticker"
     },
     {
-      "filename" : "Chuck.stickersequence"
+      "filename" : "Chuck.sticker"
     },
     {
-      "filename" : "Pablo.stickersequence"
+      "filename" : "Pablo.sticker"
     },
     {
-      "filename" : "Connie.stickersequence"
+      "filename" : "Irene.sticker"
+    },
+    {
+      "filename" : "Buttcoin.sticker"
     }
   ],
   "info" : {
