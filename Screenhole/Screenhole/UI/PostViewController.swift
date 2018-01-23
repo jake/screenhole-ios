@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class PostViewController: UIViewController {
 
 	let imageView = UIImageView(image: nil)
 	let uploadButton = UIButton(type: .custom)
@@ -145,18 +145,12 @@ class ViewController: UIViewController {
 	}
 }
 
-extension ViewController {
+extension PostViewController {
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
 		
-		let safeAreaInsets: UIEdgeInsets
+		let safeAreaInsets = self.safeAreaInsets
 		let customSafeAreaInsets = UIEdgeInsets(top: verticalSpacing, left: horizontalSpacing, bottom: verticalSpacing, right: horizontalSpacing)
-		
-		if #available(iOS 11.0, *) {
-			safeAreaInsets = view.safeAreaInsets
-		} else {
-			safeAreaInsets = UIEdgeInsets(top: topLayoutGuide.length, left: 0, bottom: bottomLayoutGuide.length, right: 0)
-		}
 		
 		let areaInsets = UIEdgeInsetsMake(max(safeAreaInsets.top, customSafeAreaInsets.top), max(safeAreaInsets.left, customSafeAreaInsets.left), max(safeAreaInsets.bottom, customSafeAreaInsets.bottom), max(safeAreaInsets.right, customSafeAreaInsets.right))
 		let safeArea = UIEdgeInsetsInsetRect(view.bounds, areaInsets)

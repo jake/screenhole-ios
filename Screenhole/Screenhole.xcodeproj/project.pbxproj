@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		16E5BB712012C367006416ED /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16E5BB702012C367006416ED /* Stickers.xcassets */; };
 		16E5BB752012C367006416ED /* Stickers.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 16E5BB6E2012C367006416ED /* Stickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3E13DCE62017272800572214 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13DCE52017272700572214 /* PostViewController.swift */; };
+		3E13DCE82017278700572214 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13DCE72017278700572214 /* RootViewController.swift */; };
+		3E13DCEB20172A6C00572214 /* UIViewController+SafeAreaInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E13DCEA20172A6C00572214 /* UIViewController+SafeAreaInsets.swift */; };
 		3E1D9D251F9BA0C300A6AC86 /* CircularStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E1D9D1B1F9BA0C300A6AC86 /* CircularStd-Book.otf */; };
 		3E1D9D261F9BA0C300A6AC86 /* CircularStd-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E1D9D1C1F9BA0C300A6AC86 /* CircularStd-Black.otf */; };
 		3E1D9D271F9BA0C300A6AC86 /* CircularStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E1D9D1D1F9BA0C300A6AC86 /* CircularStd-Bold.otf */; };
@@ -19,7 +22,6 @@
 		3E1D9D2C1F9BA0C300A6AC86 /* CircularStd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E1D9D221F9BA0C300A6AC86 /* CircularStd-Medium.otf */; };
 		3E1D9D2D1F9BA0C300A6AC86 /* TextBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1D9D241F9BA0C300A6AC86 /* TextBubble.swift */; };
 		3E2287A51F96855400DCCBBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2287A41F96855400DCCBBE /* AppDelegate.swift */; };
-		3E2287A71F96855400DCCBBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2287A61F96855400DCCBBE /* ViewController.swift */; };
 		3E2287AA1F96855400DCCBBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2287A81F96855400DCCBBE /* Main.storyboard */; };
 		3E2287AC1F96855400DCCBBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E2287AB1F96855400DCCBBE /* Assets.xcassets */; };
 		3E2287AF1F96855400DCCBBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2287AD1F96855400DCCBBE /* LaunchScreen.storyboard */; };
@@ -72,6 +74,9 @@
 		16E5BB6E2012C367006416ED /* Stickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Stickers.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E5BB702012C367006416ED /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
 		16E5BB722012C367006416ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E13DCE52017272700572214 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		3E13DCE72017278700572214 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		3E13DCEA20172A6C00572214 /* UIViewController+SafeAreaInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SafeAreaInsets.swift"; sourceTree = "<group>"; };
 		3E1D9D1B1F9BA0C300A6AC86 /* CircularStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Book.otf"; sourceTree = "<group>"; };
 		3E1D9D1C1F9BA0C300A6AC86 /* CircularStd-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Black.otf"; sourceTree = "<group>"; };
 		3E1D9D1D1F9BA0C300A6AC86 /* CircularStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Bold.otf"; sourceTree = "<group>"; };
@@ -83,7 +88,6 @@
 		3E1D9D241F9BA0C300A6AC86 /* TextBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBubble.swift; sourceTree = "<group>"; };
 		3E2287A11F96855400DCCBBE /* Screenhole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Screenhole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2287A41F96855400DCCBBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3E2287A61F96855400DCCBBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3E2287A91F96855400DCCBBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E2287AB1F96855400DCCBBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E2287AE1F96855400DCCBBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -134,6 +138,14 @@
 			path = Stickers;
 			sourceTree = "<group>";
 		};
+		3E13DCE920172A6300572214 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3E13DCEA20172A6C00572214 /* UIViewController+SafeAreaInsets.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		3E1D9D1A1F9BA0C300A6AC86 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +164,8 @@
 		3E1D9D231F9BA0C300A6AC86 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3E13DCE72017278700572214 /* RootViewController.swift */,
+				3E13DCE52017272700572214 /* PostViewController.swift */,
 				3E1D9D241F9BA0C300A6AC86 /* TextBubble.swift */,
 			);
 			path = UI;
@@ -186,8 +200,8 @@
 				3EA66BDF1F97DAD700F03D79 /* Screenshots */,
 				3E1D9D231F9BA0C300A6AC86 /* UI */,
 				3E1D9D1A1F9BA0C300A6AC86 /* Fonts */,
+				3E13DCE920172A6300572214 /* Extensions */,
 				3E2287A41F96855400DCCBBE /* AppDelegate.swift */,
-				3E2287A61F96855400DCCBBE /* ViewController.swift */,
 				3E2287A81F96855400DCCBBE /* Main.storyboard */,
 				3E2287AB1F96855400DCCBBE /* Assets.xcassets */,
 				3E2287AD1F96855400DCCBBE /* LaunchScreen.storyboard */,
@@ -423,10 +437,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E1D9D2D1F9BA0C300A6AC86 /* TextBubble.swift in Sources */,
-				3E2287A71F96855400DCCBBE /* ViewController.swift in Sources */,
 				3EA66BE11F97DAD700F03D79 /* Screenshots.swift in Sources */,
+				3E13DCEB20172A6C00572214 /* UIViewController+SafeAreaInsets.swift in Sources */,
+				3E13DCE82017278700572214 /* RootViewController.swift in Sources */,
 				3E2287A51F96855400DCCBBE /* AppDelegate.swift in Sources */,
 				3EA66BE31F97EDCF00F03D79 /* Screenhole.swift in Sources */,
+				3E13DCE62017272800572214 /* PostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

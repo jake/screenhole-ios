@@ -1,28 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Screenhole" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="Screenhole" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5n-qQ-6EP">
+                                <rect key="frame" x="0.0" y="44" width="375" height="686"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4y-3j-TvL" userLabel="TabBar">
+                                <rect key="frame" x="0.0" y="730" width="375" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFG-ld-o26">
+                                        <rect key="frame" x="167.33333333333334" y="0.0" width="40" height="48"/>
+                                        <state key="normal" title="POST"/>
+                                        <connections>
+                                            <action selector="didPressPostButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="plI-uz-cNW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="0HN-kk-Ixm"/>
+                                    <constraint firstItem="UFG-ld-o26" firstAttribute="top" secondItem="R4y-3j-TvL" secondAttribute="top" id="PJA-BA-Fyx"/>
+                                    <constraint firstItem="UFG-ld-o26" firstAttribute="centerX" secondItem="R4y-3j-TvL" secondAttribute="centerX" id="qh8-NF-WNF"/>
+                                    <constraint firstAttribute="bottom" secondItem="UFG-ld-o26" secondAttribute="bottom" id="yjA-eQ-5bS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="V5n-qQ-6EP" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="4yY-tL-jmJ"/>
+                            <constraint firstItem="V5n-qQ-6EP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NAh-IE-ipp"/>
+                            <constraint firstItem="V5n-qQ-6EP" firstAttribute="bottom" secondItem="R4y-3j-TvL" secondAttribute="top" id="RBZ-dq-s7j"/>
+                            <constraint firstItem="R4y-3j-TvL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="WOp-xb-ybT"/>
+                            <constraint firstItem="R4y-3j-TvL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="def-n2-8pN"/>
+                            <constraint firstItem="R4y-3j-TvL" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="iWM-a8-xiB"/>
+                            <constraint firstItem="V5n-qQ-6EP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="swa-16-GdW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tabBar" destination="R4y-3j-TvL" id="n1h-xI-tIn"/>
+                        <outlet property="webViewContainer" destination="V5n-qQ-6EP" id="iqo-YW-efx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
+            <point key="canvasLocation" x="32.799999999999997" y="31.773399014778327"/>
         </scene>
     </scenes>
 </document>
