@@ -25,9 +25,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4y-3j-TvL" userLabel="TabBar">
                                 <rect key="frame" x="0.0" y="730" width="375" height="48"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFG-ld-o26">
-                                        <rect key="frame" x="167.33333333333334" y="0.0" width="40" height="48"/>
-                                        <state key="normal" title="POST"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFG-ld-o26">
+                                        <rect key="frame" x="163" y="0.0" width="50" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="TYB-VH-aHI"/>
+                                        </constraints>
+                                        <state key="normal" image="add"/>
                                         <connections>
                                             <action selector="didPressPostButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="plI-uz-cNW"/>
                                         </connections>
@@ -64,4 +67,7 @@
             <point key="canvasLocation" x="32.799999999999997" y="31.773399014778327"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add" width="35" height="35"/>
+    </resources>
 </document>
