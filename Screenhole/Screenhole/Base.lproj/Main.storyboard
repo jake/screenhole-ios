@@ -58,6 +58,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="postButton" destination="UFG-ld-o26" id="qJX-OG-jIw"/>
                         <outlet property="tabBar" destination="R4y-3j-TvL" id="n1h-xI-tIn"/>
                         <outlet property="webViewContainer" destination="V5n-qQ-6EP" id="iqo-YW-efx"/>
                     </connections>
