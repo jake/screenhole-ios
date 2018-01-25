@@ -48,17 +48,12 @@ class RootViewController: UIViewController {
 			}
 		}
 		
-		NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationDidBecomeActive, object: nil, queue: nil) { notification in
-			Screenhole.shared.refreshUser({ succeeded in
-				self.postButton?.isEnabled = Screenhole.shared.isUserSignedIn
-			})
+		NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationDidBecomeActive, object: nil, queue: nil) { [weak self] notification in
+			self?.refreshAuthentication()
 		}
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		Screenhole.shared.refreshUser { isLoggedIn in
-			self.postButton?.isEnabled = Screenhole.shared.isUserSignedIn
-		}
 	}
 	
 	override var prefersStatusBarHidden: Bool {
@@ -83,6 +78,12 @@ extension RootViewController {
 		configuration.userContentController = contentController
 		return configuration
 	}
+	
+	func refreshAuthentication() {
+		Screenhole.shared.refreshUser { [weak self] isLoggedIn in
+			self?.postButton?.isEnabled = Screenhole.shared.isUserSignedIn
+		}
+	}
 }
 
 extension RootViewController {
@@ -99,6 +100,7 @@ extension RootViewController: WKNavigationDelegate {
 			let jwt = pathComponents.last, jwt.count > 10 {
 			// Handle manually
 			Screenhole.shared.authenticationToken = jwt
+			self.refreshAuthentication()
 			decisionHandler(.cancel)
 			return
 		}
