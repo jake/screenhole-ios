@@ -37,6 +37,7 @@ class RootViewController: UIViewController {
 			webView.bottomAnchor.constraint(equalTo: container.bottomAnchor).isActive = true
 			webView.leftAnchor.constraint(equalTo: container.leftAnchor).isActive = true
 			webView.rightAnchor.constraint(equalTo: container.rightAnchor).isActive = true
+			webView.translatesAutoresizingMaskIntoConstraints = false
 			webView.navigationDelegate = self
 			webView.allowsBackForwardNavigationGestures = true
 			webView.scrollView.scrollsToTop = true
