@@ -104,6 +104,11 @@ extension RootViewController: WKNavigationDelegate {
 			self.refreshAuthentication()
 			decisionHandler(.cancel)
 			return
+		} else if let url = navigationAction.request.url, url.host != URL(string:Screenhole.shared.frontend)?.host {
+			// Going outside the site
+			UIApplication.shared.open(url)
+			decisionHandler(.cancel)
+			return
 		}
 		
 		decisionHandler(.allow)
