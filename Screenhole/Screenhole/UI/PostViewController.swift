@@ -9,16 +9,18 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class PostViewController: UIViewController {
 
 	let imageView = UIImageView(image: nil)
 	let uploadButton = UIButton(type: .custom)
+	let closeButton = UIButton(type: .custom)
 	
 	let mrHole = UIImageView(image: #imageLiteral(resourceName: "mr-hole"))
 	let textBubble = TextBubble()
 	
 	private let verticalSpacing: CGFloat = 32
 	private let horizontalSpacing: CGFloat = 10
+	private let closeButtonSize: CGFloat = 60
 	private let mrHoleOffset = CGPoint(x: 10, y: 30)
 	private let textBubbleSpacing: CGFloat = 10
 	
@@ -31,15 +33,20 @@ class ViewController: UIViewController {
 		uploadButton.addTarget(self, action: #selector(sendScreenshot), for: .touchUpInside)
 		uploadButton.isEnabled = false
 		
+		closeButton.setImage(#imageLiteral(resourceName: "close"), for: .normal)
+		closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
+		closeButton.frame = CGRect(origin: .zero, size: CGSize(width: closeButtonSize, height: closeButtonSize))
+		
 		imageView.layer.cornerRadius = 5
 		imageView.layer.masksToBounds = true
 		
 		textBubble.isHidden = true
 		
-		self.view.addSubview(mrHole)
-		self.view.addSubview(imageView)
-		self.view.addSubview(uploadButton)
-		self.view.addSubview(textBubble)
+		view.addSubview(mrHole)
+		view.addSubview(imageView)
+		view.addSubview(uploadButton)
+		view.addSubview(textBubble)
+		view.addSubview(closeButton)
 		
 		NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationDidBecomeActive, object: nil, queue: nil) { notification in
 			Screenhole.shared.refreshUser({ succeeded in
@@ -73,6 +80,10 @@ class ViewController: UIViewController {
 	
 	override var preferredStatusBarStyle: UIStatusBarStyle {
 		return .lightContent
+	}
+	
+	@objc func close() {
+		self.presentingViewController?.dismiss(animated: true)
 	}
 	
 	func showLoginDialog() {
@@ -145,21 +156,17 @@ class ViewController: UIViewController {
 	}
 }
 
-extension ViewController {
+extension PostViewController {
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
 		
-		let safeAreaInsets: UIEdgeInsets
+		let safeAreaInsets = self.safeAreaInsets
 		let customSafeAreaInsets = UIEdgeInsets(top: verticalSpacing, left: horizontalSpacing, bottom: verticalSpacing, right: horizontalSpacing)
-		
-		if #available(iOS 11.0, *) {
-			safeAreaInsets = view.safeAreaInsets
-		} else {
-			safeAreaInsets = UIEdgeInsets(top: topLayoutGuide.length, left: 0, bottom: bottomLayoutGuide.length, right: 0)
-		}
 		
 		let areaInsets = UIEdgeInsetsMake(max(safeAreaInsets.top, customSafeAreaInsets.top), max(safeAreaInsets.left, customSafeAreaInsets.left), max(safeAreaInsets.bottom, customSafeAreaInsets.bottom), max(safeAreaInsets.right, customSafeAreaInsets.right))
 		let safeArea = UIEdgeInsetsInsetRect(view.bounds, areaInsets)
+		
+		closeButton.frame.origin = UIEdgeInsetsInsetRect(view.bounds, safeAreaInsets).origin
 		
 		mrHole.frame = CGRect(origin: CGPoint(x: safeArea.midX - (mrHole.bounds.width / 2) + mrHoleOffset.x, y: safeArea.midY - (mrHole.bounds.height / 2) + mrHoleOffset.y), size: mrHole.bounds.size)
 		

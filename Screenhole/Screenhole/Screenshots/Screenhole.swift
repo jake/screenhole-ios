@@ -14,6 +14,7 @@ class Screenhole {
 	static let shared = Screenhole()
 	
 	let apiEndPoint = "https://api.screenhole.net/"
+	let frontend = "https://screenhole.net"
 	
 	var isUserSignedIn: Bool {
 		return authenticationToken != nil
@@ -32,7 +33,7 @@ class Screenhole {
 		}
 	}
 	
-	private var authenticationToken: String? {
+	var authenticationToken: String? {
 		set {
 			guard newValue != authenticationToken else {
 				return
@@ -121,5 +122,4 @@ class Screenhole {
 			}
 		}
 	}
-	
 }
