@@ -39,9 +39,9 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="0HN-kk-Ixm"/>
+                                    <constraint firstItem="UFG-ld-o26" firstAttribute="height" secondItem="R4y-3j-TvL" secondAttribute="height" id="Bhh-g0-XJn"/>
                                     <constraint firstItem="UFG-ld-o26" firstAttribute="top" secondItem="R4y-3j-TvL" secondAttribute="top" id="PJA-BA-Fyx"/>
                                     <constraint firstItem="UFG-ld-o26" firstAttribute="centerX" secondItem="R4y-3j-TvL" secondAttribute="centerX" id="qh8-NF-WNF"/>
-                                    <constraint firstAttribute="bottom" secondItem="UFG-ld-o26" secondAttribute="bottom" id="yjA-eQ-5bS"/>
                                 </constraints>
                             </view>
                         </subviews>
