@@ -47,12 +47,6 @@ class PostViewController: UIViewController {
 		view.addSubview(uploadButton)
 		view.addSubview(textBubble)
 		view.addSubview(closeButton)
-		
-		NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationDidBecomeActive, object: nil, queue: nil) { notification in
-			Screenhole.shared.refreshUser({ succeeded in
-				print("checkuser: \(succeeded)")
-			})
-		}
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -74,7 +68,6 @@ class PostViewController: UIViewController {
 		
 		if !Screenhole.shared.isUserSignedIn {
 			self.uploadButton.isEnabled = false
-			self.showLoginDialog()
 		}
 	}
 	
@@ -84,48 +77,6 @@ class PostViewController: UIViewController {
 	
 	@objc func close() {
 		self.presentingViewController?.dismiss(animated: true)
-	}
-	
-	func showLoginDialog() {
-		
-		textBubble.textLabel.text = "You need to login to access the hole"
-		view.setNeedsLayout()
-		
-		let alertController = UIAlertController(title: "Sign in to the hole", message: "Credentials please", preferredStyle: .alert)
-		alertController.addTextField { textField in
-			textField.placeholder = "username"
-			textField.autocorrectionType = .no
-		}
-		alertController.addTextField { textField in
-			textField.placeholder = "password"
-			textField.autocorrectionType = .no
-			textField.isSecureTextEntry = true
-			textField.clearsOnBeginEditing = true
-		}
-		
-		weak var weakSelf = self
-		alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-		alertController.addAction(UIAlertAction(title: "Enter", style: .default) { action in
-			
-			Screenhole.shared.login(with: (alertController.textFields?.first?.text)!, password: (alertController.textFields?.last?.text)!) { succeeded in
-				if !succeeded {
-					weakSelf?.showLoginDialog()
-				} else {
-					if weakSelf?.imageView.image != nil {
-						weakSelf?.uploadButton.isEnabled = true
-						weakSelf?.textBubble.isHidden = true
-					} else {
-						weakSelf?.uploadButton.isEnabled = false
-						weakSelf?.textBubble.textLabel.text = "Come back after you take a screenshot..."
-						weakSelf?.textBubble.isHidden = false
-						weakSelf?.view.setNeedsLayout()
-					}
-				}
-			}
-		})
-		
-		alertController.preferredAction = alertController.actions.last
-		present(alertController, animated: true, completion: nil)
 	}
 	
 	@objc func sendScreenshot() {
