@@ -43,10 +43,10 @@ class PostViewController: UIViewController {
 		textBubble.isHidden = true
 		
 		view.addSubview(mrHole)
-		view.addSubview(imageView)
 		view.addSubview(uploadButton)
 		view.addSubview(textBubble)
 		view.addSubview(closeButton)
+		view.addSubview(imageView)
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -92,7 +92,7 @@ class PostViewController: UIViewController {
 				self.textBubble.isHidden = false
 				self.mrHole.isHidden = false
 				UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseIn], animations: {
-					self.imageView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+//					self.imageView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
 					self.imageView.alpha = -1
 				}, completion: { succeeded in
 					self.imageView.image = nil
