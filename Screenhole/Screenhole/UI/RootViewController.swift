@@ -30,7 +30,8 @@ class RootViewController: UIViewController, WKUIDelegate {
 		}
 		
 		if let webView = webView {
-            webView.uiDelegate = self as WKUIDelegate
+			webView.uiDelegate = self as WKUIDelegate
+			webView.scrollView.delegate = self
             
 			container.addSubview(webView)
 			webView.isOpaque = false
@@ -177,5 +178,11 @@ extension RootViewController: WKNavigationDelegate {
 		}
 		
 		decisionHandler(.allow)
+	}
+}
+
+extension RootViewController: UIScrollViewDelegate {
+	func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+		return nil
 	}
 }
