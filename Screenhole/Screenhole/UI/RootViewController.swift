@@ -51,12 +51,19 @@ class RootViewController: UIViewController, WKUIDelegate {
 			}
 		}
 		
-		NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationDidBecomeActive, object: nil, queue: nil) { [weak self] notification in
+		NotificationCenter.default.addObserver(forName: .UIApplicationWillEnterForeground, object: nil, queue: nil) { [weak self] notification in
 			self?.refreshAuthentication()
+			self?.refreshContent()
 		}
+		
+		refreshAuthentication()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
+		if animated {
+			// non-animated is when rootViewController is first shown
+			refreshContent()
+		}
 	}
 	
 	override var prefersStatusBarHidden: Bool {
@@ -138,6 +145,10 @@ extension RootViewController {
 		Screenhole.shared.refreshUser { [weak self] isLoggedIn in
 			self?.postButton?.isEnabled = Screenhole.shared.isUserSignedIn
 		}
+	}
+	
+	func refreshContent() {
+		webView?.evaluateJavaScript("window.ClientRequestsGracefulRefresh()")
 	}
 }
 
